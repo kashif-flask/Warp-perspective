@@ -73,7 +73,7 @@ while True:
         #cv2.imshow("contour",img2)
         if biggest.size>0:
             newpoints=reorder(biggest)
-            newpoints=np.float32(newpoints)
+            newpoints=np.float32(newpoints).reshape((4,2))
             pts2=[[0,0],[size[1],0],[0,size[0]],[size[1],size[0]]]
             pts2=np.float32(pts2)
             matrix=cv2.getPerspectiveTransform(newpoints,pts2)
